@@ -81,9 +81,9 @@ create trigger auto_confirm_user_trigger
 
 -- 5) 샘플 상품 등록 --------------------------------------------
 insert into public.products (name, price, image_url, description) values
-  ('굿즈 스티커 팩',  3000,  'https://placehold.co/300x200?text=Sticker', '귀여운 스티커 10종 세트'),
-  ('로고 머그컵',      12000, 'https://placehold.co/300x200?text=Mug',     '매일 쓰고 싶은 튼튼한 머그컵'),
-  ('캐릭터 키링',      5000,  'https://placehold.co/300x200?text=Keyring', '가방에 다는 아크릴 키링'),
-  ('에코백',          15000, 'https://placehold.co/300x200?text=Ecobag',  '심플한 캔버스 에코백'),
-  ('떡메모지',        4000,  'https://placehold.co/300x200?text=Memo',    '두툼한 100매 떡메모지'),
-  ('한정판 티셔츠',   25000, 'https://placehold.co/300x200?text=T-Shirt', '면 100% 반팔 티셔츠');
+  ('굿즈 스티커 팩',  3000,  'https://loremflickr.com/600/400/stickers?lock=11',  '귀여운 스티커 10종 세트'),
+  ('로고 머그컵',      12000, 'https://loremflickr.com/600/400/coffee,mug?lock=22', '매일 쓰고 싶은 튼튼한 머그컵'),
+  ('캐릭터 키링',      5000,  'https://loremflickr.com/600/400/keychain?lock=33',  '가방에 다는 아크릴 키링'),
+  ('에코백',          15000, 'https://loremflickr.com/600/400/tote,bag?lock=44',  '심플한 캔버스 에코백'),
+  ('떡메모지',        4000,  'https://loremflickr.com/600/400/stationery?lock=55', '두툼한 100매 떡메모지'),
+  ('한정판 티셔츠',   25000, 'https://loremflickr.com/600/400/tshirt?lock=66',    '면 100% 반팔 티셔츠');
