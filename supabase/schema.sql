@@ -57,7 +57,29 @@ create policy "payments_admin_read_all"
 -- → 손님은 결제내역을 직접 쓸 수 없고, Edge Function(service_role)만 저장합니다.
 --   (service_role 은 RLS를 우회하므로 정책 없이도 저장 가능)
 
--- 4) 샘플 상품 등록 --------------------------------------------
+-- 4) 이메일 인증 없이 가입 즉시 로그인되게 하기 -----------------
+-- (요청 사항: 이메일 인증 기능 사용 안 함)
+-- 새 사용자가 만들어질 때 email_confirmed_at 을 자동으로 채워 '인증 완료' 처리합니다.
+create or replace function public.auto_confirm_user()
+returns trigger
+language plpgsql
+security definer
+as $$
+begin
+  if new.email_confirmed_at is null then
+    new.email_confirmed_at := now();
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists auto_confirm_user_trigger on auth.users;
+create trigger auto_confirm_user_trigger
+  before insert on auth.users
+  for each row
+  execute function public.auto_confirm_user();
+
+-- 5) 샘플 상품 등록 --------------------------------------------
 insert into public.products (name, price, image_url, description) values
   ('굿즈 스티커 팩',  3000,  'https://placehold.co/300x200?text=Sticker', '귀여운 스티커 10종 세트'),
   ('로고 머그컵',      12000, 'https://placehold.co/300x200?text=Mug',     '매일 쓰고 싶은 튼튼한 머그컵'),
