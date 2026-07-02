@@ -1,0 +1,6 @@
+# 비밀/설정 파일은 올리지 않습니다
+.mcp.json
+.env
+.env.*
+.DS_Store
+node_modules/

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 결제내역 · 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/history.js" defer></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main>
+    <h1>내 결제내역</h1>
+    <table>
+      <thead>
+        <tr><th>결제일시</th><th>상품</th><th>금액</th><th>상태</th></tr>
+      </thead>
+      <tbody id="historyBody">
+        <tr><td colspan="4">불러오는 중...</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

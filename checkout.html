@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>결제 · 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/checkout.js" defer></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main>
+    <h1>결제하기</h1>
+    <p class="notice">테스트 모드입니다. 실제 결제가 되지 않으며, 토스가 제공하는 테스트 카드로 결제해 보세요.</p>
+    <div id="orderInfo" class="order-info">불러오는 중...</div>
+    <div id="payment-method"></div>
+    <div id="agreement"></div>
+    <button id="payBtn" class="btn" disabled>결제하기</button>
+  </main>
+</body>
+</html>
